@@ -1,0 +1,251 @@
+swagger: "2.0"
+info:
+  description: This is the swagger file that goes with our server code
+  version: "1.0.0"
+  title: Swagger Rest Article
+consumes:
+  - application/json
+produces:
+  - application/json
+
+basePath: /api
+
+# Paths supported by the server application
+paths:
+  /tokens:
+    get:
+      operationId: tokens.read_all
+      tags:
+        - Tokens
+      summary: Read the entire set of tokens, sorted by Symbol
+      description: Read the entire set of tokens, sorted by Symbol
+      responses:
+        200:
+          description: Successfully read tokens set operation
+          schema:
+            type: array
+            items:
+              properties:
+                token_id:
+                  type: string
+                  description: Id of the token
+                name:
+                  type: string
+                  description: Name of the token
+                symbol:
+                  type: string
+                  description: Symbol of the token
+                total_liquidity:
+                  type: number
+                  description: Total liquidity
+                eth_value:
+                  type: number
+                  description: eth value
+                total_eth_value:
+                  type: number
+                  description: total eth value
+                total_usd_value:
+                  type: number
+                  description: total usd value
+                timestamp:
+                  type: string
+                  description: Create/Update timestamp of the token
+
+    post:
+      operationId: tokens.create
+      tags:
+        - Tokens
+      summary: Create a token
+      description: Create a new token
+      parameters:
+        - name: token
+          in: body
+          description: token to create
+          required: True
+          schema:
+            type: object
+            properties:
+                token_id:
+                  type: string
+                  description: Id of the token
+                name:
+                  type: string
+                  description: Name of the token
+                symbol:
+                  type: string
+                  description: Symbol of the token
+                total_liquidity:
+                  type: number
+                  description: Total liquidity
+                eth_value:
+                  type: number
+                  description: eth value
+                total_eth_value:
+                  type: number
+                  description: total eth value
+                total_usd_value:
+                  type: number
+                  description: total usd value
+                timestamp:
+                  type: string
+                  description: Create/Update timestamp of the token
+      responses:
+        201:
+          description: Successfully created token
+          schema:
+            properties:
+                token_id:
+                  type: string
+                  description: Id of the token
+                name:
+                  type: string
+                  description: Name of the token
+                symbol:
+                  type: string
+                  description: Symbol of the token
+                total_liquidity:
+                  type: number
+                  description: Total liquidity
+                eth_value:
+                  type: number
+                  description: eth value
+                total_eth_value:
+                  type: number
+                  description: total eth value
+                total_usd_value:
+                  type: number
+                  description: total usd value
+                timestamp:
+                  type: string
+                  description: Create/Update timestamp of the token
+
+  /tokens/{token_id}:
+    get:
+      operationId: tokens.read_one
+      tags:
+        - Tokens
+      summary: Read one token
+      description: Read one token
+      parameters:
+        - name: token_id
+          in: path
+          description: Id of the token to get
+          type: string
+          required: True
+      responses:
+        200:
+          description: Successfully read token from tokens data operation
+          schema:
+            type: object
+            properties:
+                token_id:
+                  type: string
+                  description: Id of the token
+                name:
+                  type: string
+                  description: Name of the token
+                symbol:
+                  type: string
+                  description: Symbol of the token
+                total_liquidity:
+                  type: number
+                  description: Total liquidity
+                eth_value:
+                  type: number
+                  description: eth value
+                total_eth_value:
+                  type: number
+                  description: total eth value
+                total_usd_value:
+                  type: number
+                  description: total usd value
+                timestamp:
+                  type: string
+                  description: Create/Update timestamp of the token
+
+    put:
+      operationId: tokens.update
+      tags:
+        - Tokens
+      summary: Update a token
+      description: Update a token
+      parameters:
+        - name: token_id
+          in: path
+          description: Id the token to update
+          type: string
+          required: True
+        - name: token
+          in: body
+          schema:
+            type: object
+            properties:
+                token_id:
+                  type: string
+                  description: Id of the token
+                name:
+                  type: string
+                  description: Name of the token
+                symbol:
+                  type: string
+                  description: Symbol of the token
+                total_liquidity:
+                  type: number
+                  description: Total liquidity
+                eth_value:
+                  type: number
+                  description: eth value
+                total_eth_value:
+                  type: number
+                  description: total eth value
+                total_usd_value:
+                  type: number
+                  description: total usd value
+                timestamp:
+                  type: string
+                  description: Create/Update timestamp of the token
+      responses:
+        200:
+          description: Successfully updated token
+          schema:
+            properties:
+                token_id:
+                  type: string
+                  description: Id of the token
+                name:
+                  type: string
+                  description: Name of the token
+                symbol:
+                  type: string
+                  description: Symbol of the token
+                total_liquidity:
+                  type: number
+                  description: Total liquidity
+                eth_value:
+                  type: number
+                  description: eth value
+                total_eth_value:
+                  type: number
+                  description: total eth value
+                total_usd_value:
+                  type: number
+                  description: total usd value
+                timestamp:
+                  type: string
+                  description: Create/Update timestamp of the token
+
+    delete:
+      operationId: tokens.delete
+      tags:
+        - Tokens
+      summary: Delete a token from the token list
+      description: Delete a token
+      parameters:
+        - name: token_id
+          in: path
+          type: string
+          description: Id of the token to delete
+          required: true
+      responses:
+        200:
+          description: Successfully deleted a token

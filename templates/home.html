@@ -1,0 +1,53 @@
+{% extends "parent.html" %}
+{% block title %}Liquidity Tracker{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="/static/css/tokens.css">
+{% endblock %}
+
+{% block page_name %}Liquidity Tracker{% endblock %}
+
+{% block body %}
+<div class="container">
+    <input id="url_token_id" type="hidden" value="{{ token_id }}" />
+    <div class="tokens">
+        <table>
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th>Timestamp</th>
+                    <th>Symbol</th>
+                    <th>Name</th>
+                    <th>Total Liquidity (USD)</th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    <div class="error">
+    </div>
+</div>
+<div class="error">
+</div>
+
+<!-- Handlebars script tag entry -->
+{% raw %}
+<script id="tokens-table-template" type="text/x-handlebars-template">
+    <tbody>
+        {{#each tokens}}
+            <tr data-token_id="{{token_id}}">
+                <td class="timestamp">{{formatTimestamp timestamp}}</td>
+                <td class="symbol">{{symbol}}</td>
+                <td class="name">{{name}}</td>
+                <td class="total_usd_value">{{total_usd_value}}</td>
+            </tr>
+        {{/each}}
+    </tbody>
+</script>
+{% endraw %}
+
+{% endblock %}
+
+{% block javascript %}
+{{ super() }}
+<script src="/static/js/tokens.js"></script>
+{% endblock %}
