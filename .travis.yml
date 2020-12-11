@@ -10,7 +10,6 @@ install:
 # command to run tests
 script:
   cd liquidity-tracker
-  python server.py
   - pytest
 ll
 after_success:
