@@ -1,0 +1,22 @@
+language: python
+
+python:
+  - "3.6" # current default Python on Travis CI
+  - "3.7"
+  - "3.8"
+
+# command to install dependencies
+install:
+  - pip install flake8 codecov pytest pytest-cov
+  - pip install -r requirements.txt
+
+# command to run tests
+script:
+  - pytest
+ll
+after_success:
+  - codecov
+
+branches:
+  only:
+    - master
