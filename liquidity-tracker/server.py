@@ -34,8 +34,8 @@ def token(token_id=""):
 
 
 if __name__ == "__main__":
-    update_interval = 300   # updates the database after n seconds
+    # update_interval = 300   # updates the database after n seconds
 
-    build_db()
-    update_db(update_interval)
+    # build_db()
+    # update_db(update_interval)
     connex_app.run()

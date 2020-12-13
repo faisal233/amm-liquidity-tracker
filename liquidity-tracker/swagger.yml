@@ -20,7 +20,7 @@ paths:
       summary: Read the entire set of tokens, sorted by Symbol
       description: Read the entire set of tokens, sorted by Symbol
       responses:
-        200:
+        "200":
           description: Successfully read tokens set operation
           schema:
             type: array
@@ -90,7 +90,7 @@ paths:
                   type: string
                   description: Create/Update timestamp of the token
       responses:
-        201:
+        "201":
           description: Successfully created token
           schema:
             properties:
@@ -133,7 +133,7 @@ paths:
           type: string
           required: True
       responses:
-        200:
+        "200":
           description: Successfully read token from tokens data operation
           schema:
             type: object
@@ -205,7 +205,7 @@ paths:
                   type: string
                   description: Create/Update timestamp of the token
       responses:
-        200:
+        "200":
           description: Successfully updated token
           schema:
             properties:
@@ -247,5 +247,5 @@ paths:
           description: Id of the token to delete
           required: true
       responses:
-        200:
+        "200":
           description: Successfully deleted a token

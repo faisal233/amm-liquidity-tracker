@@ -5,7 +5,7 @@ from config import ma, db
 
 class Token(db.Model):
     __tablename__ = "token"
-    token_id = db.Column(db.String(32), primary_key=True)
+    token_id = db.Column(db.String(64), primary_key=True)
     symbol = db.Column(db.String(32))
     name = db.Column(db.String(32))
     total_liquidity = db.Column(db.Float())

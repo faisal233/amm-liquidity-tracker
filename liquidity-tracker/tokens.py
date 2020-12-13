@@ -57,9 +57,9 @@ def create(token):
     :return:        201 on success, 406 on token exists
     """
 
-    token_id = token.get("id")
+    token_id = token.get("token_id")
 
-    existing_token = Token.query.filter(Token.token_id == token_id)
+    existing_token = Token.query.get(token_id)
 
     # Can we insert this token?
     if existing_token is None:
@@ -90,25 +90,23 @@ def update(token_id, token):
     :param token:      token to update
     :return:            updated token structure
     """
+
+    if token_id != token.get("token_id"):
+        abort(404, f"token ID doesn't match")
+
     # Get the Token requested from the db into session
-    update_token = Token.query.filter(Token.token_id == token_id).one_or_none()
+    existing_token = Token.query.get(token_id)
 
     # Did we find an existing token?
-    if update_token is not None:
-
-        # turn the passed in token into a db object
+    if existing_token is not None:
         schema = TokenSchema()
-        up_date = schema.load(token, session=db.session).data
-
-        # Set the id to the token we want to update
-        up_date.token_id = update_token.token_id
+        update = schema.load(token, session=db.session).data
 
         # merge the new object into the old and commit it to the db
-        db.session.merge(up_date)
+        db.session.merge(update)
         db.session.commit()
 
-        # return updated token in the response
-        data = schema.dump(update_token).data
+        data = schema.dump(existing_token).data
 
         return data, 200
 
