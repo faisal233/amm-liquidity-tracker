@@ -7,6 +7,7 @@ from werkzeug.exceptions import Conflict, NotFound
 
 
 def test_read_all():
+    load_db_data.init_db()
     expected = [
         {
             "eth_value": 1.0,
@@ -118,7 +119,7 @@ def test_update():
 
     with pytest.raises(NotFound) as err:
         tokens.update("bad_ID", update_token)
-    
+
     assert err.type is NotFound
 
     tokens.update("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", update_token)
@@ -127,7 +128,3 @@ def test_update():
     assert update_resonse.get("total_eth_value") == 1
     assert update_resonse.get("total_liquidity") == 1
     assert update_resonse.get("total_usd_value") == 1
-    
-
-
-load_db_data.init_db()

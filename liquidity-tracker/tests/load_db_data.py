@@ -6,7 +6,11 @@ from os import path, remove
 
 def init_db():
     """Init the DB with some fake data."""
-    db.drop_all()
+
+    # Delete database file if it exists currently
+    if path.exists("liquidity-tracker/token.db"):
+        db.drop_all()
+
     db.create_all()
     db_items = [
         Token(

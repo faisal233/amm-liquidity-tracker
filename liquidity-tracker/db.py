@@ -46,8 +46,8 @@ def build_db():
     response = get_token_data()
 
     # Delete database file if it exists currently
-    if path.exists("token.db"):
-        remove("token.db")
+    if path.exists("liquidity-tracker/token.db"):
+        remove("liquidity-tracker/token.db")
 
     # Create the database
     config.db.create_all()
@@ -117,3 +117,5 @@ def update_db(update_interval):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     print("Database updated at", current_time)
+
+# build_db()
