@@ -9,4 +9,5 @@ authorize_error = {
 
 
 def test_swagger():
-    swagger_test("liquidity-tracker/swagger.yml", authorize_error=authorize_error)
+    swagger_test("liquidity-tracker/swagger.yml",
+                 authorize_error=authorize_error)

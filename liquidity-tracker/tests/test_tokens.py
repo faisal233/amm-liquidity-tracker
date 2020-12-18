@@ -123,7 +123,8 @@ def test_update():
     assert err.type is NotFound
 
     tokens.update("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", update_token)
-    update_resonse = tokens.read_one("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
+    update_resonse = tokens.read_one(
+        "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
 
     assert update_resonse.get("total_eth_value") == 1
     assert update_resonse.get("total_liquidity") == 1

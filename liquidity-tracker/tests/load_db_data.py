@@ -46,5 +46,3 @@ def init_db():
         # pylint: disable=no-member
         db.session.merge(item)
         db.session.commit()
-
-
