@@ -1,8 +1,6 @@
 import pytest
 import tokens
-import models
 import load_db_data
-import json
 from werkzeug.exceptions import Conflict, NotFound
 
 

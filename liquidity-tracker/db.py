@@ -14,7 +14,7 @@ url = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2"
 def get_eth_price():
     data = """
     query{
-        bundle(id: 1) { 
+        bundle(id: 1) {
             id ethPrice
         }
     }
@@ -27,7 +27,8 @@ def get_eth_price():
 def get_token_data():
     data = """
     query{
-        tokens(first: 500, skip: $skip, orderBy: tradeVolumeUSD, orderDirection: desc) {
+        tokens(first: 500, skip: $skip, orderBy: tradeVolumeUSD,
+         orderDirection: desc) {
             id
             name
             symbol

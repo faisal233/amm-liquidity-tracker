@@ -1,7 +1,7 @@
 """Initialization script to load test data into the DB."""
 from models import Token
-from config import ma, db
-from os import path, remove
+from config import db
+from os import path
 
 
 def init_db():

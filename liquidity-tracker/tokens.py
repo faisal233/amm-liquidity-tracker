@@ -1,8 +1,3 @@
-"""
-This is the tokens module and supports all the REST actions for the
-tokens data
-"""
-
 from flask import make_response, abort
 
 from config import db
@@ -92,7 +87,7 @@ def update(token_id, token):
     """
 
     if token_id != token.get("token_id"):
-        abort(404, f"token ID doesn't match")
+        abort(404, "token ID doesn't match")
 
     # Get the Token requested from the db into session
     existing_token = Token.query.get(token_id)
