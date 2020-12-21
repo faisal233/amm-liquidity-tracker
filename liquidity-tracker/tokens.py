@@ -6,9 +6,9 @@ from models import Token, TokenSchema
 
 def read_all():
     """
-    Responds to a request for /api/tokens with the 
-    complete lists of tokens
-    
+    Responds to a request for /api/tokens with the
+     complete lists of tokens
+
     :param:   n/a
     :return:        json string of list of tokens
     """
@@ -23,8 +23,8 @@ def read_all():
 
 def read_one(token_id):
     """
-    Responds to a request for /api/tokens/{token_id} with 
-    one matching token from tokens
+    Responds to a request for /api/tokens/{token_id} with
+     one matching token from tokens
 
     :param token_id:   Id of token to find
     :return:            token matching id

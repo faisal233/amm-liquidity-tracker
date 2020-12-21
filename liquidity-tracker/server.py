@@ -25,7 +25,6 @@ def home():
 # Create a URL route in our application for "/tokens"
 @connex_app.route("/tokens")
 @connex_app.route("/tokens/<int:token_id>")
-
 def token(token_id=""):
     """
     Responds to the browser URL http://localhost:5000/tokens
