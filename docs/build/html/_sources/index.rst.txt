@@ -1,16 +1,33 @@
-.. amm-liquidity-tracker documentation master file, created by
-   sphinx-quickstart on Mon Dec 14 11:43:01 2020.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-Welcome to amm-liquidity-tracker's documentation!
-=================================================
-
+Welcome to Liquidity Tracker's documentation!
+=============================================
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
 
+Liquidity Tracker server
+========================
+.. automodule:: server
+   :members:
+
+
+Liquidity Tracker models
+========================
+.. automodule:: models
+   :members:
+
+   
+Liquidity Tracker db
+====================
+.. automodule:: db
+   :members:
+
+   
+Liquidity Tracker tokens
+========================
+.. automodule:: tokens
+   :members:
+   
 
 Indices and tables
 ==================

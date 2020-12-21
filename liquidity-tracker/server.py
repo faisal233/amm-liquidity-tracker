@@ -14,8 +14,9 @@ connex_app.add_api("swagger.yml")
 @connex_app.route("/")
 def home():
     """
-    This function just responds to the browser URL
-    localhost:5000/
+    Responds to the browser URL http://localhost:5000
+
+    :param:   n/a
     :return:        the rendered template "home.html"
     """
     return render_template("home.html")
@@ -24,10 +25,12 @@ def home():
 # Create a URL route in our application for "/tokens"
 @connex_app.route("/tokens")
 @connex_app.route("/tokens/<int:token_id>")
+
 def token(token_id=""):
     """
-    This function just responds to the browser URL
-    localhost:5000/tokens
+    Responds to the browser URL http://localhost:5000/tokens
+
+    :param:   n/a
     :return:        the rendered template "token.html"
     """
     return render_template("tokens.html", token_id=token_id)

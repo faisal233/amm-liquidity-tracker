@@ -6,9 +6,10 @@ from models import Token, TokenSchema
 
 def read_all():
     """
-    This function responds to a request for /api/tokens
-    with the complete lists of tokens
-
+    Responds to a request for /api/tokens with the 
+    complete lists of tokens
+    
+    :param:   n/a
     :return:        json string of list of tokens
     """
     # Create the list of tokens from our dataread
@@ -22,8 +23,8 @@ def read_all():
 
 def read_one(token_id):
     """
-    This function responds to a request for /api/tokens/{token_id}
-    with one matching token from tokens
+    Responds to a request for /api/tokens/{token_id} with 
+    one matching token from tokens
 
     :param token_id:   Id of token to find
     :return:            token matching id
@@ -45,7 +46,7 @@ def read_one(token_id):
 
 def create(token):
     """
-    This function creates a new token in the tokens structure
+    Creates a new token in the tokens structure
     based on the passed in token data
 
     :param token:  token to create in tokens structure
@@ -79,7 +80,7 @@ def create(token):
 
 def update(token_id, token):
     """
-    This function updates an existing token in the tokens structure
+    Updates an existing token in the tokens structure
 
     :param token_id:   Id of the token to update in the tokens structure
     :param token:      token to update
@@ -112,7 +113,7 @@ def update(token_id, token):
 
 def delete(token_id):
     """
-    This function deletes a token from the tokens structure
+    Deletes a token from the tokens structure
 
     :param token_id:   Id of the token to delete
     :return:            200 on successful delete, 404 if not found

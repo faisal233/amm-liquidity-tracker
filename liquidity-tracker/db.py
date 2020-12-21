@@ -12,6 +12,12 @@ url = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v2"
 
 
 def get_eth_price():
+    """
+    Gets the current eth price from The Graph api
+
+    :param:   n/a
+    :return:            eth price
+    """
     data = """
     query{
         bundle(id: 1) {
@@ -25,6 +31,12 @@ def get_eth_price():
 
 
 def get_token_data():
+    """
+    Gets all token data
+
+    :param:   n/a
+    :return:            the json response
+    """
     data = """
     query{
         tokens(first: 500, skip: $skip, orderBy: tradeVolumeUSD,
@@ -43,6 +55,13 @@ def get_token_data():
 
 
 def build_db():
+    """
+    Builds the database
+
+    :param:   n/a
+    :return:  n/a
+    """
+
     _eth_price = get_eth_price()
     response = get_token_data()
 
@@ -80,6 +99,12 @@ def build_db():
 
 
 def update_db(update_interval):
+    """
+    Updates the database
+
+    :param:   n/a
+    :return:  n/a
+    """
     t = Timer(update_interval, update_db, args=[update_interval])
     t.daemon = True
     t.start()
@@ -118,5 +143,3 @@ def update_db(update_interval):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
     print("Database updated at", current_time)
-
-# build_db()

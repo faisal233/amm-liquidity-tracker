@@ -4,6 +4,12 @@ from config import ma, db
 
 
 class Token(db.Model):
+    """
+    The token class for the database
+
+    :param db.Model:   the database model
+    :return:  n/a
+    """
     __tablename__ = "token"
     token_id = db.Column(db.String(64), primary_key=True)
     symbol = db.Column(db.String(32))
@@ -21,6 +27,13 @@ class Token(db.Model):
 
 
 class TokenSchema(ma.ModelSchema):
+    """
+    The token schema for the database
+
+    :param ma.ModelSchema: the model schema
+    :return:  n/a
+    """
+
     def __init__(self, **kwargs):
         super().__init__(strict=True, **kwargs)
 
