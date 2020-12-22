@@ -16,14 +16,14 @@ sys.path.insert(0, os.path.abspath('../../liquidity-tracker'))
 
 
 # See http://blog.rtwilson.com/how-to-make-your-sphinx-documentation-compile-with-readthedocs-when-youre-using-numpy-and-scipy/
-import mock
+# import mock
 
-MOCK_MODULES = ['connexion', 'flask_marshmallow', 'flask_sqlalchemy', 'flask',
-                 'datetime.datetime', 'json.loads', 'os.path', 'os.remove',
-                'threading.timer', 'flask.render_template', 'flask.make_response',
-                'flask.abort']
-for mod_name in MOCK_MODULES:
-    sys.modules[mod_name] = mock.Mock()
+# MOCK_MODULES = ['connexion', 'flask_marshmallow', 'flask_sqlalchemy', 'flask',
+#                  'datetime.datetime', 'json.loads', 'os.path', 'os.remove',
+#                 'threading.timer', 'flask.render_template', 'flask.make_response',
+#                 'flask.abort']
+# for mod_name in MOCK_MODULES:
+#     sys.modules[mod_name] = mock.Mock()
 
 
 # -- Project information -----------------------------------------------------
