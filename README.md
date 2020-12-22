@@ -53,8 +53,11 @@ The swagger UI can be accessed from http://localhost:5000/api/ui/
 ## Demo
 * Frontend: http://167.71.16.79:5000/
 * Swagger UI: http://167.71.16.79:5000/api/ui/
-* GET tokens: http://167.71.16.79:5000/api/tokens/
+* GET tokens: http://167.71.16.79:5000/api/tokens
 * GET token: http://167.71.16.79:5000/api/tokens/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+
+## Docs:
+[Read The Docs](https://amm-liquidity-tracker.readthedocs.io/en/latest/)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
