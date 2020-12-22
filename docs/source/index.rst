@@ -4,29 +4,10 @@ Welcome to Liquidity Tracker's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
-Liquidity Tracker server
-========================
-.. automodule:: server
-   :members:
-
-
-Liquidity Tracker models
-========================
-.. automodule:: models
-   :members:
-
-   
-Liquidity Tracker db
-====================
-.. automodule:: db
-   :members:
-
-   
-Liquidity Tracker tokens
-========================
-.. automodule:: tokens
-   :members:
+   server
+   models
+   db
+   tokens
    
 
 Indices and tables
