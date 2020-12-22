@@ -2,6 +2,7 @@ import db
 import tokens
 from time import sleep
 
+
 def test_get_eth_price():
     eth_price = db.get_eth_price()
     assert eth_price is not None
