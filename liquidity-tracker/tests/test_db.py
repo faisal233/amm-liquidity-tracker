@@ -1,6 +1,6 @@
 import db
 import tokens
-
+from time import sleep
 
 def test_get_eth_price():
     eth_price = db.get_eth_price()
@@ -20,10 +20,11 @@ def test_build_db():
     assert token_symbol == "USDT"
 
 
-# def test_update_db():
-#     eth = tokens.read_one("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
-#     old_timestamp = eth.get("timestamp")
-#     db.update_db()
-#     eth = tokens.read_one("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
-#     new_timestamp = eth.get("timestamp")
-#     assert new_timestamp != old_timestamp
+def test_update_db():
+    eth = tokens.read_one("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
+    old_timestamp = eth.get("timestamp")
+    sleep(5)
+    db.update_db(1)
+    eth = tokens.read_one("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
+    new_timestamp = eth.get("timestamp")
+    assert new_timestamp != old_timestamp
