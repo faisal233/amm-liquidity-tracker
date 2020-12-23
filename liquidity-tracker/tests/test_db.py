@@ -25,7 +25,7 @@ def test_update_db():
     eth = tokens.read_one("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
     old_timestamp = eth.get("timestamp")
     sleep(5)
-    db.update_db(1)
+    db.update_db(2)
     sleep(5)
     new_eth = tokens.read_one("0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2")
     new_timestamp = new_eth.get("timestamp")
