@@ -4,7 +4,13 @@
 [![codecov](https://codecov.io/gh/faisal233/amm-liquidity-tracker/branch/main/graph/badge.svg?token=PE8XIJHDM0)](https://codecov.io/gh/faisal233/amm-liquidity-tracker)
 [![Documentation Status](https://readthedocs.org/projects/amm-liquidity-tracker/badge/?version=latest)](https://amm-liquidity-tracker.readthedocs.io/en/latest/?badge=latest)
 
-AMM Liquidity Tracker is a REST API that tracks total liquidity of ERC20 tokens available on automated market makers
+AMM Liquidity Tracker is a python REST API that tracks total liquidity of ERC20 tokens available on automated market makers.
+
+## Technology Used
+* [Flask](https://github.com/pallets/flask)
+* [Connexion/Open API](https://github.com/zalando/connexion)
+* [Swagger](https://github.com/swagger-api)
+* [SQLAlchemy](https://github.com/sqlalchemy)
 
 ## Installation 
 
